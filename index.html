@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/index.css">
+  <script defer src="./js/index.js"></script>
+
+  <title>Your Website</title>
+</head>
+
+<header>
+  <div class="navi">
+    <a href="./index.html">
+    <div class="logo"><img src="images/index/logo-main.png"></div></a>
+    <div class="Toggle" onclick="toggleMenu()">
+        　　<span></span>
+        　　<span></span>
+        　　<span></span>
+        </div>
+        
+      <ul class="menu">
+        
+          <li><a href="./index.html"><span>Home</span>ホーム</a></li>
+          <li><a href="#"><span>tourism</span>観る</a></li>
+          <li><a href="#"><span>experience</span>体験</a></li>
+          <li><a href="./gourmet.html"><span>gourmet</span>食べる</a></li>
+          <li><a href="#"><span>lodging</span>宿泊</a></li>
+          <li><a href="#"><span>access</span>アクセス </a></li>
+      </ul>
+  </div>
+  </div>
+
+</header>
+<body>
+
+  <!-- メインビジュアルと動画 -->
+  <div class="main-visual">
+    <!-- 動画の埋め込み -->
+    <video id="mainVideo" width="100%" height="auto" autoplay loop muted ontimeupdate="checkTime()">
+      <source src="./images/index/nemuro-main-visual.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+  <!-- 画像コンテナ -->
+  <div class="image-container">
+    <!-- 画像1 -->
+    <a href="your_page_url_1.html">
+      <img src="./images/index/おでかけガイド.png" alt="Image 1" class="gallery-image-1">
+    </a>
+    <!-- 画像2 -->
+    <a href="your_page_url_2.html">
+      <img src="./images/index/観る.png" alt="Image 2" class="gallery-image" onmouseover="zoomIn(this)" onmouseout="zoomOut(this)">
+    </a>
+    <!-- 画像3 -->
+    <a href="your_page_url_3.html">
+      <img src="./images/index/体験.png" alt="Image 3" class="gallery-image" onmouseover="zoomIn(this)" onmouseout="zoomOut(this)">
+    </a>
+    <!-- 画像4 -->
+    <a href="your_page_url_4.html">
+      <img src="./images/index/食べる.png" alt="Image 4" class="gallery-image" onmouseover="zoomIn(this)" onmouseout="zoomOut(this)">
+    </a>
+    <!-- 画像5 -->
+    <a href="your_page_url_5.html">
+      <img src="./images/index/泊まる.png" alt="Image 5" class="gallery-image" onmouseover="zoomIn(this)" onmouseout="zoomOut(this)">
+    </a>
+    <!-- 画像6 -->
+    <a href="your_page_url_6.html">
+      <img src="./images/index/アクセス.png" alt="Image 6" class="gallery-image" onmouseover="zoomIn(this)" onmouseout="zoomOut(this)">
+    </a>
+  </div>
+
+  <!-- TOPICの要素 -->
+<div class="topic-container">
+    <div class="topic-text">TOPICS</div>
+ <!-- トピックのスタイル -->
+ <div class="topic-frame" id="topicFrame">
+  <!-- 1つ目のトピック -->
+  <div class="topic-slide">
+    <img src="./images/index/朝日.jpg" alt="Topic 1" class="topic-image">
+    <div class="topic-text">
+      <font size="2">2023年12月31日</font><br>第44回納沙布岬初日詣の実施
+      <p>12月31日~1月1日にかけ、荒天が予想されることから「郷土芸能ねむろ太鼓」演奏は中止となりました。</p>
+    </div>
+  </div>
+  <!-- 2つ目のトピック -->
+  <div class="topic-slide">
+    <img src="./images/index/探鳥.jpg" alt="Topic 2" class="topic-image">
+    <div class="topic-text">
+      <font size="2">2023年12月20日</font><br>月初心者向け探鳥会の開催
+      <p>2024年1月14日(日) 11月より集合時間が午前9時に変更となっておりますのでご注意ください。</p>
+    </div>
+  </div>
+  <!-- 3つ目のトピック -->
+  <div class="topic-slide">
+    <img src="./images/index/otiishi1.png" alt="Topic 3" class="topic-image">
+    <div class="topic-text">
+      <font size="2">2023年10月31日</font><br>落石岬木道の立入禁止解除
+      <p>パトロールより姿や痕跡等が発見されなかったことから10月31日より落石岬木道を開通いたします。</p>
+    </div>
+  </div>
+  <button class="topic-more-button" onclick="showMore('Topic 3')">もっと見る</button>
+ </div>
+</div>
+
+  <!-- 追加：ねむろってどんなとこ？のテキスト -->
+<div class="nemurotoha">
+  <div class="nemuro"><h2>ねむろってどんなところ？</h2></div>
+<div class="nemuro-about">
+  <div class="nemuro-about-image">
+    <img src="./images/index/nemuro.png" alt="Additional Image" >
+  </div>
+  <div class="nemuro-about-text">
+    <h2>根室市</h2>
+    <p>根室市は太平洋とオホーツク海に面した日本で最も東にある街。<br>日本一早い日の出が見られる「納沙布岬」や幻想的な流氷の景色を眺められる「根室海峡」など、魅力あふれる観光地があります。
+    また、根室市では水産加工業が盛んで、「花咲ガニ」や「根室のさんま」を目当てに訪れる観光客も少なくありません。旬の時期にはお祭りも開催しており、多くの地元民や観光客で賑わいます。</p>
+    <div class="nem">
+      <p class="bound">
+        <span>N</span>
+        <span>E</span>
+        <span>M</span>
+        <span>U</span>
+        <span>R</span>
+        <span>O</span>
+        
+      </p>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- おすすめスポット -->
+<div class="recommendation-container">
+  <img src="./images/index/ひらめく.png" alt="Small Image" class="hirameki">
+  <h2>おすすめスポット<br><font size="2">pick up</font></h2>
+
+  <div class="nossapu">
+    <h2>納沙布岬</h2>
+    <div class="wrap">
+      <img src="./images/index/nossapu1.png">
+      <div class="box">
+        <h3>朝日に一番最初に出会う</h3>
+        <p>
+          ああああああああああああああ。</p>
+      </div>
+    </div>
+    
+    <div class="wrap">
+      <img src="./images/index/nossapu2.png">
+    
+      <div class="box">
+        <h3>ああああああああ</h3>
+        <p>ああああああああああああああ</p>
+      </div>
+    </div>
+</div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+
+</body>
+</html>
