@@ -1,4 +1,8 @@
-/* styles.css */
+.main-visual iframe {
+  width: 100%;
+  height: 100vh;
+}
+
 .navi {
   display: flex;
   justify-content: space-between;
