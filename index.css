@@ -213,7 +213,7 @@ body {
 
 .nemuro-about-image {
   width: 35%;
-  background-image: url(/images/index/nemurotoha.png);
+  background-image: url(images/index/nemurotoha.png);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
