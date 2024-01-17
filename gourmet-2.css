@@ -1,148 +1,437 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-<meta charset="utf-8">
-<title>6-1-7 複数画像を中央に注目させて見せる</title>
-<meta name="description"  content="書籍「動くWebデザインアイディア帳」のサンプルサイトです">
+.wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  background-color: #fff;
+}
 
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<!--==============レイアウトを制御する独自のCSSを読み込み===============-->
-<link rel="stylesheet" type="text/css" href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/reset.css">
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
-<link rel="stylesheet" type="text/css" href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-1-7/css/6-1-7.css">
-<link rel="stylesheet" href="./css/gourmet-2.css">
-<link href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/reset.css" rel="stylesheet">
-<link href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/4-1-4/css/4-1-4.css" rel="stylesheet">
-</head>
+.logo {
+  width: 170px;
+  padding-left: 50px;
+}
 
-<body>
-  <header>
-    <div class="menu-btn" onclick="toggleMenu()">
-      <div class="bar"></div>
-      <div class="bar"></div>
-      <div class="bar"></div>
-  </div>
-  <nav class="navbar">
-      <ul>
-          <li><a href="./index.html"><span>Home</span>ホーム</a></li>
-          <li><a href="#"><span>tourism</span>観る</a></li>
-          <li><a href="#"><span>experience</span>体験</a></li>
-          <li><a href="./gourmet.html"><span>gourmet</span>食べる</a></li>
-          <li><a href="#"><span>lodging</span>宿泊</a></li>
-          <li><a href="#"><span>access</span>アクセス</a></li>
-      </ul>
-  </nav>
-  </header>
-  <div id="splash">
-    <div id="splash_logo"><img src="./images/index/logo-main.png" alt="" class="fadeUp"></div><!--画像部分は適宜差し換えてください-->
-    <!--/splash--></div>
-<ul class="slider">
-  <li><img src="./images/gourmet-2/はなまる0.png" alt=""></li>
-  <li><img src="./images/gourmet-2/はなまる1.png" alt=""></li>
-  <li><img src="./images/gourmet-2/はなまる2.png" alt=""></li>
-  <li><img src="./images/gourmet-2/はなまる3.png" alt=""></li>
-  <li><img src="./images/gourmet-2/はなまる4.png" alt=""></li>
-</ul>
+.logo img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
 
-<h1 class="heading">根室花まる</h1>
+ul {
+  display: flex;
+  justify-content: flex-end;
+  flex: 1;
+  list-style: none;
+}
 
-<div class="nemuro-sushihan">
-  <h2>漁師町、地元根室の名に懸けて</h2>
-  <p>日本でも指折りの豊かな漁場として知られる根室港</p>
-  <p>地元根室や近海で水揚げされた魚介類を直送で仕切れ</p>
-  <p>常に新鮮な旬のネタを提供しているため根室の新鮮な海の幸が味わえる。</p>
+li:not(:last-child) {
+  margin-right: 50px;
+}
+
+li a {
+  display: flex;
+  flex-direction: column;
+  color: #5d8f8f;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  line-height: 1.6;
+  font-size: 18px;
+  padding-right: 20px;
+}
+
+li a span {
+  color: #5b8f8f;
+  font-size: 12px;
+}
+
+.slider {/*横幅94%で左右に余白を持たせて中央寄せ*/
+    width:94%;
+    margin:0 auto;
+    padding-top: 100px;
+}
+
+.slider img {
+    width:60vw;/*スライダー内の画像を60vwにしてレスポンシブ化*/
+    height:auto;
+}
+
+.slider .slick-slide {
+  transform: scale(0.8);/*左右の画像のサイズを80%に*/
+  transition: all .5s;/*拡大や透過のアニメーションを0.5秒で行う*/
+  opacity: 0.5;/*透過50%*/
+}
+
+.slider .slick-slide.slick-center{
+  transform: scale(1);/*中央の画像のサイズだけ等倍に*/
+  opacity: 1;/*透過なし*/
+}
+
+
+/*矢印の設定*/
+
+/*戻る、次へ矢印の位置*/
+.slick-prev, 
+.slick-next {
+    position: absolute;/*絶対配置にする*/
+    top: 42%;
+    cursor: pointer;/*マウスカーソルを指マークに*/
+    outline: none;/*クリックをしたら出てくる枠線を消す*/
+    border-top: 2px solid #666;/*矢印の色*/
+    border-right: 2px solid #666;/*矢印の色*/
+    height: 15px;
+    width: 15px;
+}
+
+.slick-prev {/*戻る矢印の位置と形状*/
+    left: -1.5%;
+    transform: rotate(-135deg);
+}
+
+.slick-next {/*次へ矢印の位置と形状*/
+    right: -1.5%;
+    transform: rotate(45deg);
+}
+
+/*ドットナビゲーションの設定*/
+
+.slick-dots {
+  text-align: center;
+  margin: 20px 0 0 0;
+  position: absolute;
+  left: 50%; /* 左端を中央に */
+  transform: translateX(-50%);
+  padding-bottom: 50px;
+}
+
+.slick-dots li {
+  display:inline-block;
+  margin:0 5px;
+}
+
+.slick-dots button {
+    color: transparent;
+    outline: none;
+    width:8px;/*ドットボタンのサイズ*/
+    height:8px;/*ドットボタンのサイズ*/
+    display:block;
+    border-radius:50%;
+    background:#ccc;/*ドットボタンの色*/
+}
+
+.slick-dots .slick-active button{
+    background:#333;/*ドットボタンの現在地表示の色*/
+}
+
+
+/*========= レイアウトのためのCSS ===============*/
+
+body{
+  background:#eee;
+}
+
+.heading {
+  position: relative;
+  padding-top: 50px;
+  padding-left: 28px;
+  padding-bottom: 24px;
+  width: 100%;
+  border-bottom: 5px solid #c7c7c7;
+  text-align: center;
+}
+
+.heading::after {
+  content: '';
+  position:absolute;
+  top: 100%;
+  left: 25%;
+  width: 50%;
+  height: 5px;
+  background-color: #5b8f8f;
+}
+
+
+ul{
+  margin:0;
+  padding: 0;
+  list-style: none;
+}
+
+a{
+  color: #333;
+}
+
+a:hover,
+a:active{
+  text-decoration: none;
+}
+
+.nemuro-sushihan {
+  background-color: #fff;
+  padding-bottom: 50px;
+}
+
+.nemuro-sushihan h2{
+  text-align: center;
+  color: dimgrey;
+  padding-top: 80px;
+
+}
+
+
+.table{
+  width: 60%;
+  border-collapse: collapse;
+  margin: auto;;
+  margin-top: 55px;
+}
+
+.table tr{
+  border-bottom: solid 2px white;
+}
+
+.table tr:last-child{
+  border-bottom: none;
+}
+
+.table th{
+  position: relative;
+  text-align: left;
+  width: 30%;
+  background-color:#5b8f8f;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.table th:after{
+  display: block;
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  top:calc(50% - 10px);
+  right:-10px;
+  border-left: 10px solid #5b8f8f;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+}
+
+.table td{
+  text-align: left;
+  width: 70%;
+  text-align: center;
+  background-color: #eee;
+  padding: 20px 0;
+}
+
+.table th,
+.table td {
+  padding: 15px; /* セルの内側の余白を広く */
+  line-height: 1.6; /* セル内の行の高さを調整 */
+}
+
+.gmap-container {
+  padding-top: 50px;
+  max-width: 70%;
+  width: 100%;
+  margin: 0 auto;
+  padding-bottom: 50px;
+}
+
+#gmap {
+  height: 0;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+}
+
+#gmap iframe {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  border: 5px solid #5b8f8f; /* 枠の色を設定 */
+}
+
+.recommend {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.recommendation-items {
+  display: flex;
+  justify-content: space-around;
+}
+
+.recommendation-item {
+  width: 30%;
+  box-sizing: border-box;
+  padding: 15px;
+  text-align: center;
+  background-color: #fff;
+  transition: transform 0.3s ease-in-out; 
+}
+
+.recommendation-item:hover {
+  transform: scale(1.1);
+}
+
+.recommendation-item img {
+  max-width: 100%; /* 画像が親要素をはみ出さないように */
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.recommendation-item h3 {
+  font-size: 1.2em;
+  margin-bottom: 8px;
   
-  <table class="table">
-    <tr>
-      <th>店名</th>
-      <td>回転寿司　根室花まる</td>
-    </tr>
-    <tr>
-      <th>住所</th>
-      <td>根室市花園町9丁目35番地</td>
-    </tr>
-    <tr>
-      <th>TEL</th>
-      <td>0153-24-1444</td>
-    </tr>
-    <tr>
-      <th>FAX</th>
-      <td>0153-24-5261</td>
-    </tr>
-    <tr>
-      <th>URL</th>
-      <td>https://www.sushi-hanamaru.com/</td>
-    </tr>
-    <tr>
-      <th>営業時間</th>
-      <td>11:00-21:00(LO 20:45)</td>
-    </tr>
-    <tr>
-      <th>定休日</th>
-      <td>不定休(2024年1月 1日2日16日休業)</td>
-    </tr>
-    <tr>
-      <th>駐車場</th>
-      <td>あり　40台</td>
-    </tr>
-    <tr>
-      <th>クレジット</th>
-      <td>〇</td>
-    </tr>
-    <tr>
-      <th>席</th>
-      <td>カウンター　
-        <br>テーブル　
-      </td>
-    </tr>
-    <tr>
-      <th>アクセス</th>
-      <td><b>JR根室駅より</b><br>駅前の中央分離帯のある通りを直進し(約200m)<br>国道44号線との交差点を左(釧路方面)に曲がる<br>そのまま国道44号線を直進し、徒歩10分ほど
-      </td>
-    </tr>
-    <tr>
-      <th>備考</th>
-      <td>※予約不可
-      </td>
-    </tr>
-  </table>
+}
 
-<div class="gmap-container">
-  <div id ="gmap">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2902.440623673288!2d145.5720910761595!3d43.32596797111956!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f6dd308a3d56e0b%3A0xc13aed9e921f22d9!2z5Zue6Lui5a-_5Y-4IOagueWupOiKseOBvuOCiyDmoLnlrqTlupc!5e0!3m2!1sja!2sjp!4v1705301349322!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-</div>
-</div>
-<a href="" class="btn_23">和食・寿司</a>
-<a href="" class="btn_23">グルメトップ</a>
-</div>
+.recommendation-item p {
+  color:dimgrey;
+}
 
+a.btn_23 {
+  display:block;
+  text-decoration: none;
+  width: 200px;
+  padding: 15px;
+  text-align: center;
+  margin: 20px auto 15px auto;
+  font-weight: bold;
+  border: 2px solid #5b8f8f;
+  color: #5b8f8f;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
 
-<div class="recommend">
-  <h2>こちらもおすすめ</h2>
-  <div class="recommendation-items">
-    <div class="recommendation-item">
-      <img src="画像のURL" alt="アイテム1">
-      <h3>アイテム1</h3>
-      <p>説明文1</p>
-    </div>
-    <div class="recommendation-item">
-      <img src="画像のURL" alt="アイテム2">
-      <h3>アイテム2</h3>
-      <p>説明文2</p>
-    </div>
-    <div class="recommendation-item">
-      <img src="画像のURL" alt="アイテム3">
-      <h3>アイテム3</h3>
-      <p>説明文3</p>
-    </div>
-  </div>
-</div>
+a.btn_23::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #5b8f8f;
+  transform: translateX(-100%);
+  transition: all .3s;
+  z-index: -1;
+}
 
-<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-<script src="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-1-7/js/6-1-7.js"></script>
-<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXv
-ZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-<script src="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/4-1-4/js/4-1-4.js"></script>
-</body>
-</html>
+a.btn_23:hover::before {
+  transform: translateX(0);
+}
+
+a.btn_23:hover {
+  color: #fff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+
+  .menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 0; /* ヘッダーの高さに合わせて調整 */
+    left: 0;
+    background-color: #fff;
+    width: 100%;
+    padding-bottom: 50px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+  
+  .wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: #fff;
+    padding-bottom: 20px;
+    padding-right: 20px;
+  }
+  .ul {
+    padding-left: 50px;
+  }
+  
+  /* ハンバーガーメニューのアイコン設定 */
+  .Toggle {
+    display: block;
+    cursor:alias;
+    z-index: 2; /* ハンバーガーアイコンが上にくるようにする */
+  }
+  
+  .Toggle span {
+    display: block;
+    height:7px;
+    width: 70px;
+    background-color: #5b8f8f;
+    transition: 1s;
+    margin: 0px 0;
+    position: relative;
+  }
+  
+  .active span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+  
+  .active span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .active span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
+  
+  .open {
+    display: flex;
+  }
+  
+  li a {
+    display: flex;
+    flex-direction: column;
+    color: #5d8f8f;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    line-height: 1.6;
+  }
+  
+  li a span {
+    color: #fff;
+    font-size: 13px;
+  }
+  body {
+    margin: 0;
+  }
+
+.nemuro-sushihan h2 {
+  text-align: left;
+}
+
+.nemuro-sushihan p {
+  text-align: left;
+}
+
+.table {
+  width: 100%;
+  height: max-content;
+}
+
+.gmap-container{
+  max-width: 100%;
+  height: max-content;
+}
+}
