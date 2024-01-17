@@ -1,0 +1,346 @@
+.main-visual {
+  position: relative;
+  height: max-content;
+  overflow: hidden;
+}
+
+.main-visual img {
+  width: 100%;
+  height: auto;
+}
+
+.overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+}
+
+.overlay h2 {
+  font-size: 3em;
+  margin-bottom: 10px;
+}
+
+.overlay p {
+  font-size: 1.5em;
+}
+
+.wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  background-color: #fff;
+}
+
+.logo {
+  width: 170px;
+  padding-left: 50px;
+}
+
+.logo img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+ul {
+  display: flex;
+  justify-content: flex-end;
+  flex: 1;
+  list-style: none;
+  font-size: 24px;
+}
+
+li:not(:last-child) {
+  margin-right: 50px;
+}
+
+li a {
+  display: flex;
+  flex-direction: column;
+  color: #5d8f8f;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  line-height: 1.6;
+  font-size: 18px;
+  padding-right: 20px;
+}
+
+li a span {
+  color: #5b8f8f;
+  font-size: 12px;
+}
+
+.navi {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px; 
+}
+
+.gallery-image {
+  width: calc(75% - 10px); 
+  height: auto;
+  border-radius: 8px; 
+  transition: transform 0.3s ease; 
+}
+
+.gallery-image:hover {
+  transform: scale(1.2);
+}
+
+.gallery-image-1 {
+  width: calc(100% - 15px); 
+}
+
+.body {
+  background-color: #DCE0E4;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.main-content {
+  margin: 20px; 
+  margin-top: 80px;
+  text-align: center; 
+}
+
+.main-content h2 {
+  font-size: 2em; /* 見出しのフォントサイズ調整 */
+  margin-bottom: 80px; /* 見出しとテキストの間隔 */
+}
+
+.main-content p {
+  line-height: 1.6; /* テキストの行の高さ調整 */
+  padding-bottom: 50px;
+}
+
+/* 既存のCSSにこれを追加するか、新しいCSSファイルを作成してください */
+
+.gourmet-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1%;
+  justify-content: center;
+}
+
+.gourmet-container a {
+  width: 38%; /* 2列に均等に配置するための幅指定 */
+  margin-bottom: 1%; /* 画像の下に余白を追加 */
+  justify-content: center;
+}
+
+.gourmet-container img {
+  width: 100%;
+  height: auto;
+  filter: brightness(50%);
+  transition: opacity 0.3s ease;
+}
+
+.gourmet-container a img {
+  width: 100%; /* 画像の幅を100%に設定 */
+  height: auto; /* 高さは自動調整 */
+  transition: transform 0.3s ease; /* ホバーエフェクトのトランジション設定 */
+}
+
+/* 画像へのホバーエフェクト */
+.gourmet-container a:hover img {
+  transform: scale(1.1);
+}
+
+.image-container {
+  position: relative;
+  overflow: hidden;
+  display: inline-block; /* 画像とテキストを横に配置するために追加 */
+}
+
+.image-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 2em;
+  font-weight: bold;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* オプション: テキストに影を追加 */
+}
+
+.wrap2 {
+  scroll-snap-type: x mandatory;
+  margin: 0 auto;
+  padding: 30px 0;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow-x: scroll;
+  margin-top: 50px;
+}
+
+.item {
+  scroll-snap-align: center;
+  display: inline-block;
+  margin: 0 20px;
+  width: 40%;
+  white-space: normal;
+  background-color: #DCE0E4;
+  overflow: hidden;
+}
+
+.item img{
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.item p{
+  margin: 0;
+  padding: 20px;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.slider {
+  margin-top: 100px;
+  text-align: center;
+}
+
+.slider h2 {
+text-align: center;
+}
+
+#splash {
+  /*fixedで全面に固定*/
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    background:#5b8f8f;
+    text-align:center;
+    color:#fff;
+  }
+  
+  /* Loading画像中央配置　*/
+  #splash_logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  /* Loading アイコンの大きさ設定　*/
+  #splash_logo img {
+    width:260px;
+  }
+  
+  /* fadeUpをするアイコンの動き */
+  .fadeUp{
+  animation-name: fadeUpAnime;
+  animation-duration:0.5s;
+  animation-fill-mode:forwards;
+  opacity: 0;
+  }
+  
+  @keyframes fadeUpAnime{
+    from {
+      opacity: 0;
+    transform: translateY(100px);
+    }
+  
+    to {
+      opacity: 1;
+    transform: translateY(0);
+    }
+  }
+
+  @media (max-width: 763px) {
+    .menu {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 0; /* ヘッダーの高さに合わせて調整 */
+      left: 0;
+      background-color: #fff;
+      width: 100%;
+      padding-bottom: 50px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+    }
+    
+    .wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      background-color: #fff;
+      padding-bottom: 20px;
+      padding-right: 20px;
+    }
+    .ul {
+      padding-left: 50px;
+    }
+    
+    /* ハンバーガーメニューのアイコン設定 */
+    .Toggle {
+      display: block;
+      cursor:alias;
+      z-index: 20000; /* ハンバーガーアイコンが上にくるようにする */
+    }
+    
+    .Toggle span {
+      display: block;
+      height:7px;
+      width: 70px;
+      background-color: #5b8f8f;
+      transition: 1s;
+      margin: 0px 0;
+      position: relative;
+    }
+    
+    .active span:nth-child(1) {
+      transform: rotate(-45deg) translate(-5px, 6px);
+    }
+    
+    .active span:nth-child(2) {
+      opacity: 0;
+    }
+    
+    .active span:nth-child(3) {
+      transform: rotate(45deg) translate(-5px, -6px);
+    }
+    
+    .open {
+      display: flex;
+    }
+    
+    li a {
+      display: flex;
+      flex-direction: column;
+      color: #5d8f8f;
+      font-weight: 700;
+      text-align: center;
+      text-decoration: none;
+      line-height: 1.6;
+    }
+    
+    li a span {
+      color: #fff;
+      font-size: 13px;
+    }
+
+    body {
+      margin: 0;
+    }
+  }
