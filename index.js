@@ -1,3 +1,7 @@
+document.addEventListener('DOMContentLoaded', function () {
+  var video = document.querySelector('iframe');
+  video.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
+});
 
   if (video.currentTime >= startTime && video.currentTime <= endTime) {
     overlayText.style.opacity = 1; // テキストを表示
