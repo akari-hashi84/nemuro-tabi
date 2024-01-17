@@ -1,0 +1,441 @@
+/* styles.css */
+.navi {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  background-color: #fff;
+}
+
+.logo {
+  width: 170px;
+  padding-left: 50px;
+}
+
+.logo img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+ul {
+  display: flex;
+  justify-content: flex-end;
+  flex: 1;
+  list-style: none;
+  font-size: 24px;
+}
+
+li:not(:last-child) {
+  margin-right: 50px;
+}
+
+li a {
+  display: flex;
+  flex-direction: column;
+  color: #5d8f8f;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  line-height: 1.6;
+  font-size: 18px;
+  padding-right: 20px;
+}
+
+li a span {
+  color: #5b8f8f;
+  font-size: 12px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  overflow-x: hidden; 
+}
+
+.main-visual {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%; 
+  overflow: hidden;
+}
+
+.main-visual video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 110%; 
+  height: 85%; 
+  object-fit: cover;
+}
+
+.fade-in {
+  opacity: 1 !important; 
+}
+
+/* 画像のスタイル */
+.image-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px; /* 画像とメインビジュアルの間隔を調整 */
+}
+
+.gallery-image {
+  width: calc(75% - 10px); /* 画像の幅（横方向の余白を考慮） */
+  height: auto;
+  transition: transform 0.4s ease; 
+}
+
+.gallery-image:hover {
+  transform: scale(1.2);
+}
+
+.gallery-image-1 {
+  width: calc(100% - 15px); 
+}
+
+/* TOPICのスタイル */
+.topic-container {
+  text-align: center;
+  margin-top: 100px;
+}
+
+.topic-text {
+  font-size: 2rem;
+  color: #000;
+}
+
+/* トピックのスタイル */
+.topic-frame {
+  position: relative; /* 相対位置指定 */
+  display: flex; /* フレックスボックスを使用して子要素を横に配置 */
+  flex-direction: row; /* 子要素を横に配置 */
+  justify-content: space-evenly; /* 子要素を均等に配置 */
+  align-items: center; /* 子要素を垂直方向に中央揃え */
+  background-color: #DCE0E4;
+  padding: 30px;
+  padding-bottom: 120px;
+  border-radius: 30px;
+  margin-top: 10px;
+  width: 85%; /* ここで横幅を指定 */
+  margin-left: auto;
+  margin-right: auto;
+  overflow-x: auto; /* X方向のオーバーフローをスクロールに変更 */
+}
+
+.topic-more-button {
+  position: absolute;
+  bottom: 20px;
+  left: 50%; /* 中央揃えのため左側に50%移動 */
+  transform: translateX(-50%); /* 中央揃え */
+  background-color:#8eb9df; /* ボタンの背景色 */
+  color: #fff; /* ボタンの文字色 */
+  padding: 15px 50px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* ホバー時のアニション */
+}
+
+.topic-more-button:hover {
+  background-color: #2980b9; /* ホバー時の背景色変更 */
+}
+
+
+.topic-content {
+  /* 各トピックのスタイル */
+  flex: 0 0 auto; /* フレックスアイテムの伸縮を禁止 */
+  margin-right: 20px; /* トピックの右側にマージンを追加 */
+  text-align: center; /* テキストを中央揃え */
+}
+
+/* 各トピックのスタイル */
+.topic-slide {
+  max-width: 300px; /* 画像とテキストの最大幅 */
+  margin: 0;
+  overflow: hidden;
+  background-color: white; /* 背景を白に設定 */
+  padding: 20px;
+}
+
+.topic-image {
+  width: 100%;
+  height: 150px; /* 画像の高さを適切なサイズに固定（適宜調整） */
+  object-fit: cover; /* 画像が枠にピッタリ収まるように調整 */
+}
+
+
+.topic-text {
+  margin-top: 5px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.topic-text p {
+  font-size: 12px;
+  font-weight:lighter;
+}
+
+#topicFrame {
+  display: flex;
+  overflow-x: auto;
+}
+
+.topic-slide:hover {
+  transform: scale(1.1); /* カーソルを合わせると1.1倍の大きさに拡大 */
+  transition: transform 0.3s ease; /* アニメーションのスムージングを追加 */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.7); /* ドロップシャドウを追加 */
+}
+
+.nemuro {
+  text-align: center;
+  padding-top: 130px;
+  font-size: 20px;
+}
+
+.nemuro-about {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.nemuro-about-image {
+  width: 35%;
+  background-image: url(/images/index/nemurotoha.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 90px 30px;
+  padding: 20px;
+  border-radius:30% 70% 56% 44% / 42% 30% 70% 58%  ;
+}
+
+.nemuro-about-text {
+  padding: 0 120px;
+  width: 30%;
+}
+
+.nem{
+	position:relative;
+	width:100%;
+	height:300px;
+}
+
+/*フォント*/
+.bound span{
+  font-family: Consolas, 'Courier New', Courier, Monaco, monospace;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top:0;
+	bottom: 50px;
+	margin: auto;
+	font-size:5em;
+	font-weight:bold;
+	color: #5b8f8f;
+	text-align:center;
+	width:100px;
+	height:100px;
+  
+}
+
+
+/*アニメーション指定
+文字数に合わせてleftや開始時間（2つ目のs）を設定する*/
+.bound span:nth-child(1){ left:-4.2em; animation: bound-anim 2s 0s infinite;}
+.bound span:nth-child(2){ left:-2.8em; animation: bound-anim 2s 0.3s infinite;}
+.bound span:nth-child(3){	left:-1.4em; animation: bound-anim 2s 0.5s infinite;}
+
+.bound span:nth-child(4){	left: 0.0em; animation: bound-anim 2s 0.7s infinite;}
+
+.bound span:nth-child(5){	left: 1.4em; animation: bound-anim 2s 0.9s infinite;}
+
+.bound span:nth-child(6){ left: 2.8em; animation: bound-anim 2s 1.1s infinite;}
+
+.wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.wrap:not(:last-child) {
+  margin-bottom: 80px;
+}
+
+.wrap:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.wrap img {
+  display: block;
+  width: 48%;
+  height: auto;
+}
+
+.box {
+  width: 48%;
+}
+
+.card ul {
+  column-count: 3;
+  padding: 20px;
+  list-style: none;
+}
+
+li {
+  break-inside: avoid;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 33px;
+}
+
+/*アニメーションキーフレーム
+小さいフォントサイズの場合はtopの数値も縮小すると飛び過ぎない*/
+@keyframes bound-anim {
+	0%,100% {top: 0;transform: scale(1);}
+	30% {top: -25%;}
+	50% {transform: scale(1);}
+	90% {top: 0;transform: scale(1.2,0.8);}
+}
+
+
+.nemuro-about-text h2 {
+  text-align: center;
+}
+
+.nemuro-about-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* 追加：おすすめスポットのスタイル */
+.recommendation-container {
+  text-align: center;
+  background-color: #DCE0E4;
+  margin: 0; /* マージンを0に設定 */
+  padding: 120px;
+}
+
+.recommendation-container h2 {
+  font-size: 30px; /* 適切なフォントサイズを指定 */
+  color: #000; /* 適切な文字色を指定 */
+  padding-top: 0px;
+}
+
+/* CSSスタイル */
+.hirameki {
+  max-width: 40px; /* 画像の最大幅を指定 */
+  max-height: 40px; /* 画像の最大高さを指定 */
+  width: auto; /* 幅を自動調整 */
+  text-align: center;
+}
+
+
+@media (max-width: 800px) {
+  .menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 0; /* ヘッダーの高さに合わせて調整 */
+    left: 0;
+    background-color: #fff;
+    width: 100%;
+    padding-bottom: 50px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  }
+  
+  .navi {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: #fff;
+    padding-bottom: 20px;
+  }
+  .ul {
+    padding-left: 50px;
+  }
+  
+  /* ハンバーガーメニューのアイコン設定 */
+  .Toggle {
+    display: block;
+    cursor:alias;
+    z-index: 2; /* ハンバーガーアイコンが上にくるようにする */
+  }
+  
+  .Toggle span {
+    display: block;
+    height:7px;
+    width: 70px;
+    background-color: #5b8f8f;
+    transition: 1s;
+    margin: 0px 0;
+    position: relative;
+  }
+  
+  .active span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+  
+  .active span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .active span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
+  
+  .open {
+    display: flex;
+  }
+  
+
+
+  body {
+    margin: 0;
+  }
+
+
+.nemuro-about-image {
+  width: 50%;
+}
+
+.nemuro-about-text {
+  padding: 0 30px;
+  width: 45%;
+}
+
+.topic-frame {
+  position: relative; /* 相対位置指定 */
+  display: block; /* フレックスボックスを使用して子要素を横に配置 */
+  flex-direction: row; /* 子要素を横に配置 */
+  justify-content: space-evenly; /* 子要素を均等に配置 */
+  align-items: center; /* 子要素を垂直方向に中央揃え */
+  background-color: #DCE0E4;
+  padding: 30px;
+  padding-bottom: 120px;
+  border-radius: 30px;
+  margin-top: 10px;
+  width: 85%; /* ここで横幅を指定 */
+  margin-left: auto;
+  margin-right: auto;
+  overflow-x: auto; /* X方向のオーバーフローをスクロールに変更 */
+}
+
+}
+
