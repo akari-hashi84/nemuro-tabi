@@ -215,7 +215,7 @@ body {
 
 .nemuro-about-image {
   width: 35%;
-  background-image: url(images/index/nemurotoha.png);
+  background-image: url(./images/index/nemurotoha.png);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -321,22 +321,22 @@ body {
 }
 
 .slide-image:nth-child(1) {
-  background-image: url(images/index/nossapu1.png);
+  background-image: url(./images/index/nossapu1.png);
   animation-delay: -2s;
 }
 
 .slide-image:nth-child(2) {
-  background-image: url(images/index/nossapu2.png);
+  background-image: url(./images/index/nossapu2.png);
   animation-delay: 6s;
 }
 
 .slide-image:nth-child(3) {
-  background-image: url(images/index/nossapu3.png);
+  background-image: url(./images/index/nossapu3.png);
   animation-delay: 14s;
 }
 
 .recommendation-container {
-  background-image: url(/images/index/背景.png);
+  background-image: url(./images/index/背景.png);
   background-size:contain; /* 画像を領域いっぱいに表示 */
   background-position: center; /* 画像を中央に配置 */
   background-repeat: no-repeat; /* 画像の繰り返しを無効に */
