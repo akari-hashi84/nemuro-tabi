@@ -285,7 +285,7 @@ body {
 
 .box {
   width: 28%;
-  margin-left: 120px;
+  margin-left: auto;
   background-color: #fff;
   padding: 3%;
   border-radius: 30px;
