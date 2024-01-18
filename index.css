@@ -3,6 +3,7 @@
   height: 100vh;
 }
 
+
 .navi {
   display: flex;
   justify-content: space-between;
@@ -183,6 +184,7 @@ body {
 .topic-text p {
   font-size: 12px;
   font-weight:lighter;
+  font-family: 'Sawarabi Gothic', sans-serif;
 }
 
 #topicFrame {
@@ -213,7 +215,7 @@ body {
 
 .nemuro-about-image {
   width: 35%;
-  background-image: url(images/index/nemurotoha.png);
+  background-image: url(/images/index/nemurotoha.png);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -225,6 +227,7 @@ body {
 .nemuro-about-text {
   padding: 0 120px;
   width: 30%;
+  font-family: 'Sawarabi Gothic', sans-serif;
 }
 
 .nem{
@@ -266,9 +269,10 @@ body {
 
 .wrap {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+  padding-top: 40px;
+  font-family: 'Sawarabi Gothic', sans-serif;
 }
 
 .wrap:not(:last-child) {
@@ -279,32 +283,88 @@ body {
   flex-direction: row-reverse;
 }
 
-.wrap img {
-  display: block;
-  width: 48%;
-  height: auto;
-}
-
 .box {
-  width: 48%;
+  width: 28%;
+  margin-left: auto;
+  background-color: #fff;
+  padding: 3%;
+  border-radius: 30px;
+  box-shadow: 10px 10px 0px #5b8f8f /* 影のスタイルを設定 */
 }
 
-.card ul {
-  column-count: 3;
-  padding: 20px;
-  list-style: none;
+
+.box h2 {
+  border-bottom: 2px solid #5b8f8f; /* 線のスタイルを設定 */
+  padding-bottom: 10px; /* 線とテキストの間隔を設定 */
+  margin-bottom: 20px; /* マージンを設定して下部の余白を確保 */
 }
 
-li {
-  break-inside: avoid;
+
+.slide {
+  position: relative;
+  width: 50%;
+  height: 500px;
+  overflow: hidden;
 }
 
-img {
-  display: block;
+.slide-image {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: auto;
-  border-radius: 33px;
+  height: 100%;
+  opacity: 0;
+  animation: slider-1 24s linear infinite;
 }
+
+.slide-image:nth-child(1) {
+  background-image: url(/images/index/nossapu1.png);
+  animation-delay: -2s;
+}
+
+.slide-image:nth-child(2) {
+  background-image: url(/images/index/nossapu2.png);
+  animation-delay: 6s;
+}
+
+.slide-image:nth-child(3) {
+  background-image: url(/images/index/nossapu3.png);
+  animation-delay: 14s;
+}
+
+.recommendation-container {
+  background-image: url(/images/index/背景.png);
+  background-size:contain; /* 画像を領域いっぱいに表示 */
+  background-position: center; /* 画像を中央に配置 */
+  background-repeat: no-repeat; /* 画像の繰り返しを無効に */
+}
+
+
+@keyframes slider-1 {
+  0% {
+    opacity: 0;
+    transform: scale(1);
+  }
+  4.16% {
+    opacity: 1;
+  }
+  33.33% {
+    opacity: 1;
+  }
+  41.66% {
+    opacity: 0;
+
+  }
+    100% {
+  opacity: 0;
+  }
+}
+
+
+
 
 /*アニメーションキーフレーム
 小さいフォントサイズの場合はtopの数値も縮小すると飛び過ぎない*/
@@ -347,6 +407,217 @@ img {
   max-height: 40px; /* 画像の最大高さを指定 */
   width: auto; /* 幅を自動調整 */
   text-align: center;
+}
+
+.gallery ul{
+  column-count: 3;
+  padding: 20px;
+  list-style: none;
+}
+
+.gallery li{
+  break-inside: avoid;
+}
+
+.gallery img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.gallery li:nth-child(1) img {
+  border-radius:240px 15px 100px 15px / 15px 200px 15px 185px;
+}
+
+.gallery li:nth-child(2) img {
+  border-radius:240px 20px 100px 10px / 15px 15px 15px 150px ;
+}
+
+.gallery li:nth-child(3) img {
+  border-radius: 300px 30px 120px 35px / 10px 220px 10px 160px;
+}
+
+.activity p{
+  font-size: 20px;
+  text-align: center;
+}
+
+.activity{
+  text-align: center;
+  margin: 0; /* マージンを0に設定 */
+  padding: 120px;
+}
+
+.activity h2 {
+  font-size: 30px; /* 適切なフォントサイズを指定 */
+  color: #000; /* 適切な文字色を指定 */
+  padding-top: 0px;
+}
+
+a.btn_23 {
+  display:block;
+  text-decoration: none;
+  width: 200px;
+  padding: 15px;
+  text-align: center;
+  margin: 20px auto 15px auto;
+  font-weight: bold;
+  border: 2px solid #5b8f8f;
+  color: #5b8f8f;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+a.btn_23::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #5b8f8f;
+  transform: translateX(-100%);
+  transition: all .3s;
+  z-index: -1;
+}
+
+a.btn_23:hover::before {
+  transform: translateX(0);
+}
+
+a.btn_23:hover {
+  color: #fff;
+}
+
+.top {
+  -webkit-column-count: 4;
+  -moz-column-count: 4;
+  -ms-column-count: 4;
+  -o-column-count: 4;
+  column-count: 4;
+  -webkit-column-gap: 3px;
+  -moz-column-gap: 3px;
+  -ms-column-gap: 3px;
+  -o-column-gap: 3px;
+  column-gap: 3px;
+}
+
+.top img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+  
+
+.img:nth-child(1) {
+  width: 100%;
+  height: 200px; 
+}
+
+.img:nth-child(2) {
+  width: 100%;
+  height: 150px;
+}
+
+.img:nth-child(3) {
+  width: 100%;
+  height: 200px;
+}
+
+.img:nth-child(4) {
+  width: 100%;
+  height: 150px; 
+}
+
+.img:nth-child(5) {
+  width: 100%;
+  height: 250px;
+}
+
+.img:nth-child(6) {
+  width: 100%;
+  height: 150px; 
+}
+
+.img:nth-child(7) {
+  width: 100%;
+  height: 200px; 
+}
+
+.img:nth-child(8) {
+  width: 100%;
+  height: 190px; 
+}
+
+.img:nth-child(9) {
+  width: 100%;
+  height: 160px; 
+}
+
+.img:nth-child(10) {
+  width: 100%;
+  height: 250px; 
+}
+
+.img:nth-child(11) {
+  width: 100%;
+  height: 200px; 
+}
+
+.img:nth-child(12) {
+  width: 100%;
+  height: 100px; 
+}
+
+.site-menu ul {
+  display: flex;
+}
+
+.site-menu ul li {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.site-menu ul li a {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+}
+
+.footer {
+  color: #5b8f8f;
+  background-color:#DCE0E4;
+  padding-top: 30px;
+  padding-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-logo img{
+  display: block;
+  width: 200px;
+
+  margin-top: 20px;
+  text-align: center;
+}
+
+.footer-tel {
+  font-size: 26px;
+  font-weight: bold;
+  margin-top: 28px;
+}
+
+.footer-time {
+  font-size: 13px;
+  margin-top: 16px;
+}
+
+.copyright {
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 90px;
 }
 
 
@@ -441,5 +712,24 @@ img {
   overflow-x: auto; /* X方向のオーバーフローをスクロールに変更 */
 }
 
+.main-visual iframe {
+  height: 50vh; /* 画面が狭い場合は高さを調整 */
+}
+  .wrap {
+    flex-direction: column;
+  }
+
+  .box {
+    width: 100%;
+    margin-left: 0;
+    margin-bottom: 20px; /* ボックス間のマージンを追加 */
+  }
+
+  .slide-image {
+    width: 100%;
+    height: 100%;
 }
 
+
+
+}
