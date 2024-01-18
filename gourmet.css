@@ -1,3 +1,7 @@
+body {
+  font-family: 'Sawarabi Gothic', sans-serif;
+}
+
 .main-visual {
   position: relative;
   height: max-content;
