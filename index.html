@@ -5,14 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://akari-hashi84.github.io/nemuro-tabi/index.css"/>
   <script defer src="https://akari-hashi84.github.io/nemuro-tabi/index.js"/></script>
-　<link href="https://fonts.googleapis.com/css2?family=Sawarabi+Gothic&display=swap" rel="stylesheet">
+
   <title>Your Website</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sawarabi+Gothic&display=swap" rel="stylesheet">
+
+
 </head>
 
 <header>
   <div class="navi">
     <a href="./index.html">
-    <div class="logo"><img src="./images/index/logo-main.png"></div></a>
+    <div class="logo"><img src="images/index/logo-main.png"></div></a>
     <div class="Toggle" onclick="toggleMenu()">
         　　<span></span>
         　　<span></span>
@@ -21,10 +27,10 @@
         
       <ul class="menu">
         
-          <li><a href="./index.html"/><span>Home</span>ホーム</a></li>
+          <li><a href="./index.html"><span>Home</span>ホーム</a></li>
           <li><a href="#"><span>tourism</span>観る</a></li>
           <li><a href="#"><span>experience</span>体験</a></li>
-          <li><a href="./gourmet.html"/><span>gourmet</span>食べる</a></li>
+          <li><a href="./gourmet.html"><span>gourmet</span>食べる</a></li>
           <li><a href="#"><span>lodging</span>宿泊</a></li>
           <li><a href="#"><span>access</span>アクセス </a></li>
       </ul>
@@ -47,30 +53,30 @@
       <img src="./images/index/おでかけガイド.png" alt="Image 1" class="gallery-image-1">
     </a>
     <!-- 画像2 -->
-    <a href="#">
+    <a href="your_page_url_2.html">
       <img src="./images/index/観る.png" alt="Image 2" class="gallery-image" onmouseover="zoomIn(this)" onmouseout="zoomOut(this)">
     </a>
     <!-- 画像3 -->
-    <a href="#">
+    <a href="your_page_url_3.html">
       <img src="./images/index/体験.png" alt="Image 3" class="gallery-image" onmouseover="zoomIn(this)" onmouseout="zoomOut(this)">
     </a>
     <!-- 画像4 -->
-    <a href="/gourmet.html">
+    <a href="your_page_url_4.html">
       <img src="./images/index/食べる.png" alt="Image 4" class="gallery-image" onmouseover="zoomIn(this)" onmouseout="zoomOut(this)">
     </a>
     <!-- 画像5 -->
-    <a href="#">
+    <a href="your_page_url_5.html">
       <img src="./images/index/泊まる.png" alt="Image 5" class="gallery-image" onmouseover="zoomIn(this)" onmouseout="zoomOut(this)">
     </a>
     <!-- 画像6 -->
-    <a href="#">
+    <a href="your_page_url_6.html">
       <img src="./images/index/アクセス.png" alt="Image 6" class="gallery-image" onmouseover="zoomIn(this)" onmouseout="zoomOut(this)">
     </a>
   </div>
 
   <!-- TOPICの要素 -->
 <div class="topic-container">
-    <div class="topic-text">TOPICS</div>
+    <div class="topic-text"><h2>NEWS</h2></div>
  <!-- トピックのスタイル -->
  <div class="topic-frame" id="topicFrame">
   <!-- 1つ目のトピック -->
@@ -97,7 +103,7 @@
       <p>パトロールより姿や痕跡等が発見されなかったことから10月31日より落石岬木道を開通いたします。</p>
     </div>
   </div>
-  <button class="topic-more-button" onclick="showMore('Topic 3')">もっと見る</button>
+  <button class="topic-more-button" onclick="showMore('Topic 3')">過去のニュースを見る</button>
  </div>
 </div>
 
@@ -125,7 +131,7 @@
     </div>
   </div>
 </div>
-</div>
+
 
 <!-- おすすめスポット -->
 <div class="recommendation-container">
@@ -133,30 +139,86 @@
   <h2>おすすめスポット<br><font size="2">pick up</font></h2>
 
   <div class="nossapu">
-    <h2>納沙布岬</h2>
     <div class="wrap">
-      <img src="./images/index/nossapu1.png">
-      <div class="box">
-        <h3>朝日に一番最初に出会う</h3>
-        <p>
-          ああああああああああああああ。</p>
+      <div class="slide">
+        <div class="slide-image"></div>
+        <div class="slide-image"></div>
+        <div class="slide-image"></div>
       </div>
-    </div>
-    
-    <div class="wrap">
-      <img src="./images/index/nossapu2.png">
-    
       <div class="box">
-        <h3>ああああああああ</h3>
-        <p>ああああああああああああああ</p>
+        <h2>納沙布岬</h2>
+        <p>日本の最東端に位置し、国内で一番朝早く朝日と出会える場所として有名。北方領土の歯舞群島を間近で見ることができ、運が良ければラッコに出会える。</p>
+        
       </div>
+      
     </div>
+    <a href="" class="btn_23">more</a>
+  </div>
+  </div>
+
+
+<div class="activity">
+  <img src="./images/index/くつ.png" alt="Small Image" class="hirameki">
+  <h2>アクティビティ<br><font size="2">pick up</font></h2>
+<div class="gallery">
+  <ul>
+    <li>
+      <img src="./images/index/ネイチャークルーズ.png">
+      <p><b>ネイチャークルーズ</b></p>
+    </li>
+    <li>
+      <img src="./images/index/フットパス.png">
+      <p><b>フットパス</b></p>
+    </li>
+    <li>
+      <img src="./images/index/バードウォッチング.png">
+      <p><b>バードウォッチング</b></p>
+    </li>
+
+  </ul>
 </div>
+<a href="" class="btn_23">more</a>
 </div>
 
+
+<div class="top">
+  <img class="img" src="./images/index/meizi.jpeg" alt="" />
+  <img class="img" src="./images/index/nossapu1.png" alt="" />
+  <img class="img" src="./images/index/北方.jpg" alt="" />
+  <img class="img" src="./images/index/春国岱.jpeg" alt="" />
+  <img class="img" src="./images/index/nemuro1.jpg" alt="" />
+  <img class="img" src="./images/index/otiishi2.png" alt="" />
+  <img class="img" src="./images/index/浜.jpg" alt="" />
+  <img class="img" src="./images/index/車石.jpg" alt="" />
+  <img class="img" src="./images/index/長節湖.jpeg" alt="" />
+  <img class="img" src="./images/index/金毘羅.png" alt="" />
+  <img class="img" src="./images/index/風連湖.jpeg" alt="" />
+  <img class="img" src="./images/index/nemuro2.jpg" alt="" />
+
+</div>
+
+<!-- footerここから -->
+<footer class="footer">
+  <nav class="site-menu">
+    <ul>
+      <li><a href="">観る</a></li>
+      <li><a href="">体験</a></li>
+      <li><a href="./gourmet.html">食べる</a></li>
+      <li><a href="">宿泊</a></li>
+      <li><a href="">アクセス</a></li>
+    </ul>
+  </nav>
+  
+  <a class="footer-logo" href="./index.html">
+    <img src="./images/index/logo-main.png" alt="nemuro-tabi">
+  </a>
+  <p class="footer-tel">TEL 01-2345-6789</p>
+  <p class="footer-time">9:00-18:00</p>
+  <p class="copyright"><small>&copy;根室市観光協会＠84課</small></p>
+</footer>
+<!-- footerここまで -->
 
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-
 
 </body>
 </html>
