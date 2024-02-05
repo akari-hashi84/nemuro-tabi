@@ -57,7 +57,7 @@ li a span {
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Sawarabi Gothic', sans-serif;
+  font-family: 'Arial', sans-serif;
   overflow-x: hidden; 
 }
 
@@ -225,9 +225,9 @@ body {
 }
 
 .nemuro-about-text {
-  padding: 0 120px;
+  padding:  120px;
   width: 46%;
-  font-family: 'Sawarabi Gothic', sans-serif;
+
 }
 
 .nem{
@@ -259,11 +259,11 @@ body {
 文字数に合わせてleftや開始時間（2つ目のs）を設定する*/
 .bound span:nth-child(1){ left:-4.2em; animation: bound-anim 2s 0s infinite;}
 .bound span:nth-child(2){ left:-2.8em; animation: bound-anim 2s 0.3s infinite;}
-.bound span:nth-child(3){left:-1.4em; animation: bound-anim 2s 0.5s infinite;}
+.bound span:nth-child(3){	left:-1.4em; animation: bound-anim 2s 0.5s infinite;}
 
-.bound span:nth-child(4){left: 0.0em; animation: bound-anim 2s 0.7s infinite;}
+.bound span:nth-child(4){	left: 0.0em; animation: bound-anim 2s 0.7s infinite;}
 
-.bound span:nth-child(5){left: 1.4em; animation: bound-anim 2s 0.9s infinite;}
+.bound span:nth-child(5){	left: 1.4em; animation: bound-anim 2s 0.9s infinite;}
 
 .bound span:nth-child(6){ left: 2.8em; animation: bound-anim 2s 1.1s infinite;}
 
@@ -305,6 +305,7 @@ body {
   width: 50%;
   height: 500px;
   overflow: hidden;
+  
 }
 
 .slide-image {
@@ -336,7 +337,7 @@ body {
 }
 
 .recommendation-container {
-  background-image: url(./images/index/背景.png);
+  background-image: url(/images/index/背景.png);
   background-size:contain; /* 画像を領域いっぱいに表示 */
   background-position: center; /* 画像を中央に配置 */
   background-repeat: no-repeat; /* 画像の繰り返しを無効に */
